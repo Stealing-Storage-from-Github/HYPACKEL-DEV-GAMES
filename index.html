@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Platform</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
     <style>
         /* Add your custom CSS styles here */
         body {
@@ -34,35 +29,52 @@
 </head>
 <body>
     <h1>Hypackel Dev Games</h1>
+    <div class="game-search">
+        <input type="text" id="searchInput" placeholder="Search for games...">
+    </div>
     <div id="game-list"></div>
 
     <script>
-        // Fetch game data from the separate JSON file
-        fetch("games.json")
+        // Fetch game data from the separate JSON file (or use your own data)
+        fetch("https://raw.githubusercontent.com/Stealing-Storage-from-Github/HYPACKEL-DEV-GAMES/master/games.json")
             .then(response => response.json())
             .then(data => {
                 const gameList = document.getElementById("game-list");
-                data.games.forEach(game => {
-                    const gameCard = document.createElement("div");
-                    gameCard.classList.add("game-card", "card"); // Added Bootstrap class "card"
-                    gameCard.innerHTML = `
-                        <h2 class="card-title">${game.title}</h2> 
-                        <img src="${game.icon}" alt="${game.title} Icon" class="game-icon card-img-top"> 
-                        <p class="card-text">${game.description}</p>
-                        <a href="${game.url}" class="btn btn-success">Play Now</a>
-                    `;
-                    gameList.appendChild(gameCard);
-                });
+                const searchInput = document.getElementById("searchInput");
+
+                // Function to filter games based on search query
+                const filterGames = () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const filteredGames = data.games.filter(game =>
+                        game.title.toLowerCase().includes(searchTerm)
+                    );
+
+                    // Clear existing game list
+                    gameList.innerHTML = "";
+
+                    // Display filtered games
+                    filteredGames.forEach(game => {
+                        const gameCard = document.createElement("div");
+                        gameCard.classList.add("game-card", "card");
+                        gameCard.innerHTML = `
+                            <h2 class="card-title">${game.title}</h2>
+                            <img src="${game.icon}" alt="${game.title} Icon" class="game-icon card-img-top">
+                            <p class="card-text">${game.description}</p>
+                            <a href="${game.url}" class="btn btn-success">Play Now</a>
+                        `;
+                        gameList.appendChild(gameCard);
+                    });
+                };
+
+                // Initial display of all games
+                filterGames();
+
+                // Event listener for search input
+                searchInput.addEventListener("input", filterGames);
             })
             .catch(error => console.error("Error loading JSON:", error));
     </script>
 
-    <!-- Optional: Include Bootstrap JS (if needed) -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- ... (your existing Bootstrap JS and other scripts) ... -->
 </body>
 </html>
