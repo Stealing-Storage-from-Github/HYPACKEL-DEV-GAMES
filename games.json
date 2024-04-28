@@ -1,0 +1,25 @@
+{
+    "games": [
+        {
+            "id": 1,
+            "title": "Monopoly",
+            "description": "Play Monopoly! Created by Sneakdoom",
+            "url": "games/gamefiles/monoply/gameplayer.html",
+            "icon": "games/icons/NOTFOUND.png"
+        },
+        {
+            "id": 2,
+            "title": "Monopoly",
+            "description": "Play Monopoly! Created by Sneakdoom",
+            "url": "games/gamefiles/monoply/gameplayer.html",
+            "icon": "games/icons/NOTFOUND.png"
+        },
+        {
+            "id": 3,
+            "title": "Monopoly",
+            "description": "Play Monopoly! Created by Sneakdoom",
+            "url": "games/gamefiles/monoply/gameplayer.html",
+            "icon": "games/icons/NOTFOUND.png"
+        }
+    ]
+}
