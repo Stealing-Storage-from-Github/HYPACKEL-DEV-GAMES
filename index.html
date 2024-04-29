@@ -1,34 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypackel Dev Games</title>
     <style>
-        /* Add your custom CSS styles here */
+        .big {
+            font-size: 50px;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Dark mode background color */
-            color: #ffffff; /* Dark mode text color */
+            background-color: #201f1f; /* Dark background color */
+            color: #f9f9f9; /* Light text color */
+            text-align: center;
         }
-    
+
         .game-card {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px;
-            width: 300px; /* Set width to 300px */
-            height: 300px; /* Set height to 300px */
+            border: 1px solid #292727; /* Darker border color */
+            padding: 20px;
+            margin: 20px;
+            width: 350px;
+            height: 350px;
             display: inline-block;
+            background-color: #444; /* Slightly darker card background color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
         }
-    
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
         .game-icon {
-            max-width: 128px; /* Set the maximum width */
-            max-height: 128px; /* Set the maximum height */
+            max-width: 128px;
+            max-height: 128px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .card-title {
+            font-size: 2rem; /* Increased title size */
+            margin-bottom: 10px;
+            color: #f9f9f9; /* Light title color */
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #ccc; /* Slightly lighter text color */
+        }
+
+        .btn-success {
+            background-color: #81ff47;
+            color: #333; /* Dark button text color */
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #316b29;
+        }
+
+        /* Style the search bar */
+        .game-search input[type="text"] {
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 50%;
+            background-color: #4b4343;
+            box-shadow: 0 2px 4px rgba(95, 91, 91, 0.1);
         }
     </style>
-    
 </head>
 <body>
-    <h1>Hypackel Dev Games</h1>
+    <h1 class="big">
+        <img src="https://raw.githubusercontent.com/Stealing-Storage-from-Github/HYPACKEL-DEV-SERVER/master/public/appdev.png?token=GHSAT0AAAAAACPRNJIHGVTJTLFVQTKANOEOZRQCSCQ" width="100px" alt="Hypackel Dev Games Logo" style="vertical-align: middle;">
+        Games
+    </h1>
     <div class="game-search">
         <input type="text" id="searchInput" placeholder="Search for games...">
     </div>
@@ -74,7 +130,5 @@
             })
             .catch(error => console.error("Error loading JSON:", error));
     </script>
-
-    <!-- ... (your existing Bootstrap JS and other scripts) ... -->
 </body>
 </html>
