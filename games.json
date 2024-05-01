@@ -7,19 +7,5 @@
             "url": "games/gamefiles/monoply/gameplayer.html",
             "icon": "games/icons/NOTFOUND.png"
         },
-        {
-            "id": 2,
-            "title": "test 1",
-            "description": "Play test 1! Created by Sneakdoom",
-            "url": "games/gamefiles/gamenotfound/gameplayer.html",
-            "icon": "games/icons/NOTFOUND.png"
-        },
-        {
-            "id": 3,
-            "title": "attention 1",
-            "description": "Play test 2! Created by Sneakdoom",
-            "url": "games/gamefiles/gamenotfound/gameplayer.html",
-            "icon": "games/icons/NOTFOUND.png"
-        }
     ]
 }
