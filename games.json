@@ -6,6 +6,6 @@
             "description": "Play Monopoly! Created by Sneakdoom",
             "url": "games/gamefiles/monoply/gameplayer.html",
             "icon": "games/icons/monopolyICON.png"
-        },
+        }
     ]
 }
