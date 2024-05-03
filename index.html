@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +29,7 @@
             background-color: #444; /* Slightly darker card background color */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
+            border-radius: 5%;
         }
 
         .game-card:hover {
@@ -135,120 +135,5 @@
             })
             .catch(error => console.error("Error loading JSON:", error));
     </script>
-
-    <script>
-    function initializeParticles() {
-      particlesJS("particles-js", {
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            // value: "#ff257e" // Set line color to PINK
-            value: "#00cccc" // Set particle and line color to teal
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000"
-            },
-            polygon: {
-              nb_sides: 5
-            }
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false
-            }
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
-              sync: false
-            }
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            // color: "#ff257e", // Set line color to PINK
-            color: "#00cccc", // Set line color to teal
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 1200,
-              rotateY: 1200
-            }
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse"
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
-            },
-            resize: true
-          },
-          modes: {
-            grab: {
-              distance: 400,
-              line_linked: {
-                opacity: 1
-              }
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4
-            },
-            push: {
-              particles_nb: 4
-            },
-            remove: {
-              particles_nb: 2
-            }
-          }
-        },
-        retina_detect: true
-      });
-    };
-
-    // Call the function on window load
-    window.onload = initializeParticles;
-  </script>
 </body>
 </html>
